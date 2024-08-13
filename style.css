@@ -3,16 +3,11 @@
 * {
   font-family: "Raleway", sans-serif;
   box-sizing: border-box;
-  margin:0;
-}
-body{
-  background-color: black;
+  margin: 0;
 }
 
-.logo {
-  height: 60px;
-  position: relative;
-  margin: 30px 30px 0px 30px;
+body {
+  background-image: url("images/bee-bg.png");
 }
 
 .hero {
@@ -24,29 +19,163 @@ body{
 
 .hero::before {
   content: "";
-  background-image: url("images/background.jpg");
+  background-image: url("images/beebar-bg.jpg");
   background-size: cover;
   position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.75;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.95;
+  z-index: 1;
 }
 
-.hero h1 {
+.intro {
   position: relative;
-  color: black;
-  font-size: 1rem;
-  line-height: 0.9;
+  padding-top: 60px;
+  /* Adjust to give space below the navbar */
+  z-index: 1;
+  /* Make sure it's above the navbar */
 }
+
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Ensure content is spaced correctly */
+  padding: 10px 20px;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 50%;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  /* Center align links on desktop */
+}
+
+.navbar .logo {
+  height: 10rem;
+}
+
+.navbar a {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  /* margin: 0 10px; */
+  width: 200px;
+}
+
+.navbar a:hover {
+  color: black;
+}
+
+
+/* Hamburger menu styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  position: absolute;
+  right: 40px;
+  /* Adjust to align with your design */
+  top: 40px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+  transition: background-color 0.3s ease;
+}
+
+.active {
+  background-color: none;
+}
+
+.logo2 {
+  display: none;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+
+  .navbar-container {
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 1;
+  }
+
+  .nav-links.active {
+    top: 0px;
+    padding: 100px;
+    background-color: #4780ba;
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .intro {
+    margin-top: 150px;
+  }
+
+  /* Push down the content when the menu is active */
+  .nav-links.active .intro {
+    margin-top: 400px;
+    /* Adjust based on the height of your mobile menu */
+  }
+
+  .nav-links.active .logo {
+    display: none;
+    /* Adjust based on the height of your mobile menu */
+  }
+
+  .logo2 {
+    display: block;
+    height: 7rem;
+
+  }
+
+  .navbar a {
+    padding: 0px;
+  }
+
+}
+
 
 .hero h2 {
   position: relative;
   color: #ffffff;
   font-size: 3rem;
   font-weight: bold;
-  margin-top:15%;
+  margin-top: 15%;
+  z-index: 2;
 }
 
 .hero h5 {
@@ -54,59 +183,77 @@ body{
   color: #ffffff;
   font-size: 1.5rem;
   font-weight: bold;
-  margin:50px 0px;
+  margin: 50px 0px;
+  z-index: 2;
 }
 
-.button{
+.button {
   position: relative;
-  background-color: black;
-  color:white;
+  color: white;
+  border: 1px white solid;
+  border-radius: 300px;
   text-decoration: none;
-  padding:20px;
+  padding: 20px;
   margin-top: 5%;
+  z-index: 2;
 }
 
-.button:hover, .button2:hover {
-  background-color: white;
-  color:black;
+.button:hover,
+.button2:hover {
+  color: black;
   border: 1px solid black;
+  z-index: 2;
 }
 
-.description{
-  background-color: black;
-  color:white;
+.description {
+  color: black;
   text-align: center;
   padding: 7% 30%;
 }
 
-.description p{
+.description p {
   padding: 30px;
-  font-size:1.5em;
+  font-size: 1.5em;
 }
 
-.description h1{
+.description h1 {
   padding: 30px;
 }
-.description hr{
+
+.description hr {
   margin: 0px 50px;
 }
 
-.footer{
-  text-align: center;
-  background-color:white;
-  height: 200px;
+.social-icon {
+  height: 30px;
+  width: auto;
 }
 
-.footer h1{
+.footer {
+  text-align: center;
+  background-color: white;
+  margin-bottom: 5%;
+}
+
+.footer p {
+  margin: 70px 0px;
+}
+
+.footer h1 {
   font-size: 10px;
 }
 
-.button2{
+.footer .logo {
+  height: 10rem;
+}
+
+.button2 {
   background-color: black;
-  color:white;
+  color: white;
   text-decoration: none;
-  padding:20px;
-  /* margin-top: 5%; */
+  padding: 20px;
+  margin: 30px 0px;
+  border-radius: 300px;
 }
 
 /* Slide show */
@@ -116,6 +263,7 @@ body{
 
 img {
   vertical-align: middle;
+
 }
 
 /* Slideshow container */
@@ -124,6 +272,17 @@ img {
   position: relative;
   margin: auto;
   background-color: black;
+  border-radius: 8px;
+  /* Rounded corners for the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for the image */
+}
+
+.slideshow-container img {
+  border-radius: 8px;
+  /* Rounded corners for the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for the image */
 }
 
 /* The dots/bullets/indicators */
@@ -151,6 +310,7 @@ img {
   from {
     opacity: 0.4;
   }
+
   to {
     opacity: 1;
   }
@@ -163,8 +323,222 @@ img {
   }
 }
 
-@media only screen and (max-width: 769px){ 
-  .description{
+@media only screen and (max-width: 769px) {
+  .description {
     padding: 30px;
   }
-} 
+}
+
+/* ABOUT */
+
+.about-hero {
+  background-color: black;
+  position: relative;
+  height: 50vh;
+  width: 100%;
+  text-align: center;
+}
+
+.about-hero::before {
+  content: "";
+  background-image: url("images/background.jpg");
+  opacity: .5;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50vh;
+  /* Adjust to cover 50% of the viewport height */
+  width: 100%;
+  z-index: 1;
+  /* Ensure it’s behind the content */
+}
+
+.about-hero h2 {
+  position: relative;
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: bold;
+  z-index: 2;
+  /* Ensure it’s above the pseudo-element */
+}
+
+.about-image {
+  flex: 1;
+  max-width: 50%;
+  /* Ensure the image takes up no more than 50% of the width */
+  height: auto;
+  /* Maintain aspect ratio */
+  object-fit: cover;
+  /* Ensure the image covers its container */
+  border-radius: 8px;
+  /* Rounded corners for the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for the image */
+  transform: scale(1.05);
+  /* Slight zoom effect on hover */
+  transition: transform 0.3s ease-in-out;
+  /* Smooth zoom effect */
+}
+
+.about-image:hover {
+  transform: scale(1.1);
+  /* Increase zoom on hover */
+}
+
+.about-description {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 50px;
+}
+
+.description-text {
+  left: -10%;
+  background-color: #60adfb50;
+  /* Light background color for contrast */
+  border-radius: 8px;
+  /* Rounded corners for a softer look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
+  margin: 20px auto;
+  /* Center the section horizontally */
+  max-width: 90%;
+  /* Restrict width for better readability */
+  /* overflow: hidden; */
+  /* Ensure content doesn’t overflow */
+  color: rgb(102, 102, 102);
+  flex: 1;
+  padding: 10%;
+  /* Space between image and text */
+}
+
+.description-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.description-text p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: black;
+}
+
+.companies {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.companies img {
+  height: 10rem;
+  margin: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .about-description {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .about-image {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .description-text {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .description-text h1 {
+    font-size: 2rem;
+  }
+
+  .description-text p {
+    font-size: 1rem;
+  }
+}
+
+/* FAQ */
+
+.faq-description {
+  background-color: #60adfb50;
+  text-align: left;
+  /* Align text to the left for better readability */
+  padding: 5% 10%;
+  border-radius: 8px;
+  /* Rounded corners for a modern look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
+  margin: 20px auto;
+  /* Center the container with some margin */
+  max-width: 1200px;
+  /* Limit the maximum width */
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  /* Space between FAQ items */
+  color: #333;
+  /* Dark text color for contrast */
+}
+
+.faq-item strong {
+  display: block;
+  /* Ensure the question stands out */
+  font-size: 1.2em;
+  /* Slightly larger font for questions */
+  margin-bottom: 10px;
+  /* Space between question and answer */
+  color: black;
+  /* Dark text color for contrast */
+}
+
+.faq-item p {
+  margin: 0;
+  color: #333;
+  /* Dark text color for contrast */
+}
+
+@media (max-width: 768px) {
+  .description {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image {
+    max-width: 100%;
+    margin-bottom: 20px;
+    /* Space between image and text on small screens */
+  }
+
+  .description-text {
+    margin-left: 0;
+    /* Remove margin on small screens */
+  }
+}
+
+/* Mobile responsiveness for .about-hero h2 */
+@media only screen and (max-width: 768px) {
+  .about-hero h2 {
+    margin-top: 300px;
+    z-index: 2;
+  }
+}
+
+/* CONTACT */
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,37 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Bee Bar Mobile - Mobile Bartending & Coffee Service</title>
-    <meta name="description" content="Bee Bar Mobile offers unique bartending and coffee services for events. Book us to create a buzz at your next gathering!">
+    <meta name="description"
+        content="Bee Bar Mobile offers unique bartending and coffee services for events. Book us to create a buzz at your next gathering!">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <meta name="google-site-verification" content="google9c20b7f036598127.html" />
 </head>
+
 <body>
-    <nav class="hero">
-        <img class="logo" src="images/logo.png" alt="Bee Bar Mobile Logo">
-        <h1>BEE BAR MOBILE</h1>
-        <h2>Create a buzz at your next gathering!</h2>
-        <h5>Request Our Services</h5>
-        <a class="button" href="mailto:beebarmobile@gmail.com">BOOK NOW</a>
-    </nav>
+    <div class="hero">
+        <div class="navbar">
+            <div class="navbar-container">
+                <!-- Logo on mobile -->
+                <div class="hamburger">
+                    <a href="index.html">
+                        <img class="logo2" src="images/logo.png" alt="Bee Bar Mobile Logo" />
+                    </a>
+                </div>
+                <!-- Hamburger Menu -->
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <!-- Navigation Links -->
+                <div class="nav-links">
+                    <a href="about.html">ABOUT</a>
+                    <a href="#packages">PACKAGES</a>
+                    <a href="index.html">
+                        <img class="logo" src="images/logo.png" alt="Bee Bar Mobile Logo" />
+                    </a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="contact.html">CONTACT</a>
+                </div>
+            </div>
+        </div>
+        <div class="intro">
+            <h2>Create a buzz at your next gathering!</h2>
+            <h5>Request Our Services</h5>
+            <a class="button" href="mailto:beebarmobile@gmail.com">BOOK NOW</a>
+        </div>
+    </div>
+
     <div class="description">
         <h1>BEE BAR MOBILE</h1>
-        <hr/>
-        <p>We offer you & your guests a one of a kind bartending experience from our 16'x6' luxury mobile bar as well as coffee + espresso service.</p>
-        <small>Because events are never one-size-fits-all, our pricing is custom and dependent on how many bartenders are needed to support your guest count & what you would like to serve.</small>
+        <hr />
+        <p>We offer you & your guests a one of a kind bartending experience from our 16'x6' luxury mobile bar as
+            well as
+            coffee + espresso service.</p>
+        <small>Because events are never one-size-fits-all, our pricing is custom and dependent on how many
+            bartenders
+            are needed to support your guest count & what you would like to serve.</small>
         <p>To receive a quote contact us!</p>
-        <hr/>
+        <hr />
         <p>Let's be social!</p>
-        <a href="https://www.facebook.com/beebarmobile/"><img class="logo" src="images/facebook.png" alt="Facebook"></a>
-        <a href="https://www.instagram.com/beebarmobile/"><img class="logo" src="images/instagram.png" alt="Instagram"></a>
+        <a href="https://www.facebook.com/beebarmobile/"><img class="social-icon" src="images/facebook.png"
+                alt="Facebook"></a>
+        <a href="https://www.instagram.com/beebarmobile/"><img class="social-icon" src="images/instagram.png"
+                alt="Instagram"></a>
     </div>
 
     <!-- Slideshow -->
     <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="images/9.jpg" style="width:100%" alt="Image 9">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/11.jpg" style="width:100%" alt="Image 11">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/12.jpg" style="width:100%" alt="Image 12">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/13.jpg" style="width:100%" alt="Image 13">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/14.jpg" style="width:100%" alt="Image 14">
+        </div>
         <div class="mySlides fade">
             <img src="images/1.jpeg" style="width:100%" alt="Image 1">
         </div>
@@ -67,6 +118,11 @@
         <span class="dot"></span>
         <span class="dot"></span>
         <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
     </div>
     <!-- End Slideshow -->
     <script src="https://widget.trustmary.com/BGowU6r9t"></script>
@@ -75,28 +131,35 @@
         <img class="logo" src="images/logo.png" alt="Bee Bar Mobile Logo">
         <h1>BEE BAR MOBILE</h1>
         <a href="mailto:beebarmobile@gmail.com" class="button2">BOOK NOW</a>
+        <p>© Copyright 2024 Bee Bar Mobile</p>
     </div>
 
     <script>
         let slideIndex = 0;
         showSlides();
-        
+
         function showSlides() {
             let i;
             let slides = document.getElementsByClassName("mySlides");
             let dots = document.getElementsByClassName("dot");
             for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
+                slides[i].style.display = "none";
             }
             slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}
+            if (slideIndex > slides.length) { slideIndex = 1 }
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(" active", "");
             }
-            slides[slideIndex-1].style.display = "block";  
-            dots[slideIndex-1].className += " active";
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
             setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
         }
     </script>
 </body>
+
 </html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bee Bar Mobile - Mobile Bartending & Coffee Service</title>
+    <meta name="description"
+        content="Bee Bar Mobile offers unique bartending and coffee services for events. Book us to create a buzz at your next gathering!">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <meta name="google-site-verification" content="google9c20b7f036598127.html" />
+</head>
+
+<body>
+    <div class="about-hero">
+        <div class="navbar">
+            <div class="navbar-container">
+                <!-- Logo on mobile -->
+                <div class="hamburger">
+                    <a href="index.html">
+                        <img class="logo2" src="images/logo.png" alt="Bee Bar Mobile Logo" />
+                    </a>
+                </div>
+                <!-- Hamburger Menu -->
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <!-- Navigation Links -->
+                <div class="nav-links">
+                    <a href="about.html">ABOUT</a>
+                    <a href="#packages">PACKAGES</a>
+                    <a href="index.html">
+                        <img class="logo" src="images/logo.png" alt="Bee Bar Mobile Logo" />
+                    </a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="contact.html">CONTACT</a>
+                </div>
+            </div>
+        </div>
+        <h2>ABOUT US</h2>
+    </div>
+
+    <div class="about-description">
+        <img class="about-image" src="images/1.jpeg" alt="Description Image">
+        <div class="description-text">
+            <h1>Our Story</h1>
+            <p>Welcome to Bee Bar Mobile, where our family’s buzz-worthy passion and creativity come together to make
+                your events truly the bee's knees!</p>
+            <p>The idea for our mobile bar service really started to take flight when I, Bobby, was planning a sweet
+                proposal for my queen bee, Alex. My mom, Dana, who’s always been the hive’s wisest worker, suggested:
+                “Everyone will expect Alex to mix drinks since she's a bar pro. How about we hire a service?” But
+                instead of just adding another bee to the hive, we decided to create our own—complete with all the
+                honeyed touches!</p>
+            <p>With our team of bee-lievers, we transformed a vintage 1994 Horse trailer into a buzzing mobile bar.
+                Here’s the hive of activity behind Bee Bar Mobile:</p>
+            <p><strong>Alex: </strong> <small>My amazing wife, our mixologist extraordinaire, and the queen bee of
+                    cocktail creation.</small></p>
+            <p><strong>Dana:</strong> <small>My mom, our creative director, who brings a splash of art and design with
+                    every project.</small></p>
+            <p><strong>Mitch: </strong><small>My stepdad, the drink tester and contractor, ensuring everything is just
+                    bee-autifully perfect.</small></p>
+            <p>Together, we’ve created Bee Bar Mobile—a family-run venture where every event is abuzz with love,
+                laughter, and fantastic drinks. Here’s to making every gathering the bee's knees!</p>
+        </div>
+    </div>
+    <div class="companies">
+        <h2>
+            Companies we work with
+        </h2>
+        <img class="about-image" src="images/bakedandbutterscotch.jpeg" alt="Baked and Butterscotch">
+        <img class="about-image" src="images/business2.jpeg" alt="Business2">
+    </div>
+
+    <div class="footer">
+        <img class="logo" src="images/logo.png" alt="Bee Bar Mobile Logo">
+        <h1>BEE BAR MOBILE</h1>
+        <a href="mailto:beebarmobile@gmail.com" class="button2">BOOK NOW</a>
+        <p>© Copyright 2024 Bee Bar Mobile</p>
+    </div>
+</body>
+
+<!-- GSAP Core -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+
+<!-- GSAP ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".description .about-image", {
+            scrollTrigger: {
+                trigger: ".description",
+                start: "top center", // When the top of the trigger element hits the center of the viewport
+                end: "bottom top",  // When the bottom of the trigger element hits the top of the viewport
+                scrub: true, // Smoothly scrubs the animation based on scroll
+            },
+            x: -100, // Starts the image 100px to the left
+            opacity: 0, // Starts the image fully transparent
+            duration: 1, // Duration of the animation
+        });
+
+        gsap.from(".description h1, .description p", {
+            scrollTrigger: {
+                trigger: ".description",
+                start: "top center",
+                end: "bottom top",
+                scrub: true,
+            },
+            y: 50, // Starts the text 50px below its original position
+            opacity: 0, // Starts the text fully transparent
+            stagger: 0.2, // Stagger the animations of the text elements
+            duration: 1, // Duration of the animation
+        });
+    });
+
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    }
+
+</script>
+
+</html>
