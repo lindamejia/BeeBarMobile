@@ -364,7 +364,6 @@ img {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
-
 }
 
 .about-image {
@@ -374,8 +373,6 @@ img {
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transform: scale(1.05);
-  transition: transform 0.3s ease-in-out;
 }
 
 .about-image:hover {
@@ -426,8 +423,9 @@ img {
   }
 
   .about-image {
-    max-width: 90%;
-    margin-bottom: 20px;
+    max-width: 100%; /* Ensure the image scales to fit the container */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space below the image */
   }
 
   .description-text {
