@@ -4,7 +4,8 @@
   font-family: "Raleway", sans-serif;
   box-sizing: border-box;
   margin: 0;
-  padding: 0; /* Added to ensure no unwanted padding */
+  padding: 0;
+  /* Added to ensure no unwanted padding */
 }
 
 body {
@@ -33,15 +34,18 @@ body {
 
 .intro {
   position: relative;
-  padding-top: 60px; /* Adjust to give space below the navbar */
-  z-index: 1; /* Make sure it's above the navbar */
+  padding-top: 60px;
+  /* Adjust to give space below the navbar */
+  z-index: 1;
+  /* Make sure it's above the navbar */
 }
 
 .navbar {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Ensure content is spaced correctly */
+  justify-content: space-between;
+  /* Ensure content is spaced correctly */
   padding: 10px 20px;
 }
 
@@ -57,7 +61,8 @@ body {
 .nav-links {
   display: flex;
   align-items: center;
-  justify-content: center; /* Center align links on desktop */
+  justify-content: center;
+  /* Center align links on desktop */
   flex: 1;
 }
 
@@ -97,7 +102,8 @@ body {
 }
 
 .active {
-  background-color: none; /* This is redundant, you can remove it */
+  background-color: none;
+  /* This is redundant, you can remove it */
 }
 
 .logo2 {
@@ -139,11 +145,13 @@ body {
   }
 
   .nav-links.active .intro {
-    margin-top: 400px; /* Adjust based on the height of your mobile menu */
+    margin-top: 400px;
+    /* Adjust based on the height of your mobile menu */
   }
 
   .nav-links.active .logo {
-    display: none; /* Adjust based on the height of your mobile menu */
+    display: none;
+    /* Adjust based on the height of your mobile menu */
   }
 
   .logo-container {
@@ -411,9 +419,9 @@ img {
 /* Mobile responsiveness */
 @media only screen and (max-width: 768px) {
   .about-hero h2 {
-    font-size: 2rem; /* Adjust font size for smaller screens */
-    margin-top: 60%; /* Remove top margin */
-    padding-bottom: 10%; 
+    font-size: 2rem;
+    margin-top: 50%;
+    padding-bottom: 10%;
   }
 
   .about-description {
@@ -423,9 +431,12 @@ img {
   }
 
   .about-image {
-    width: auto; /* Ensure the image scales to fit the container */
-    height: 400px; /* Maintain aspect ratio */
-    margin-bottom: 20px; /* Space below the image */
+    width: auto;
+    /* Ensure the image scales to fit the container */
+    height: 400px;
+    /* Maintain aspect ratio */
+    margin-bottom: 20px;
+    /* Space below the image */
     transition: none;
   }
 
@@ -445,36 +456,68 @@ img {
 }
 
 
-/* FAQs */
+/* FAQ Section styles */
 .faq-container {
-  width: 90%;
-  margin: 0 auto;
+  padding: 2rem;
+}
+
+.faq-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .faq-item {
-  margin: 15px 0;
+  margin-bottom: 1rem;
 }
 
 .faq-question {
+  background: #f4f4f4;
+  border: none;
+  border-radius: 300px;
+  padding: 1rem;
+  text-align: left;
   cursor: pointer;
-  padding: 15px;
-  background-color: #f1f1f1;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  width: 100%;
+  font-size: 1rem;
 }
 
 .faq-answer {
+  padding: 0 1rem;
   display: none;
-  padding: 15px;
-  background-color: #fafafa;
-  border: 1px solid #ddd;
-  border-top: none;
+  border-top: 1px solid #ddd;
+  border-radius: 50px;
+  background: #60adfb50;
+  padding: 2%;
 }
 
-.faq-question.active + .faq-answer {
+.faq-answer.active {
   display: block;
 }
 
-.faq-question.active {
-  background-color: #ddd;
+/* Footer styles */
+.footer {
+  text-align: center;
+  background-color: white;
+  margin-bottom: 5%;
+}
+
+.footer p {
+  margin: 70px 0px;
+}
+
+.footer h1 {
+  font-size: 10px;
+}
+
+.footer .logo {
+  height: 10rem;
+}
+
+.button2 {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+  margin: 30px 0px;
+  border-radius: 300px;
 }
