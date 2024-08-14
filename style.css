@@ -4,6 +4,7 @@
   font-family: "Raleway", sans-serif;
   box-sizing: border-box;
   margin: 0;
+  padding: 0; /* Added to ensure no unwanted padding */
 }
 
 body {
@@ -32,18 +33,15 @@ body {
 
 .intro {
   position: relative;
-  padding-top: 60px;
-  /* Adjust to give space below the navbar */
-  z-index: 1;
-  /* Make sure it's above the navbar */
+  padding-top: 60px; /* Adjust to give space below the navbar */
+  z-index: 1; /* Make sure it's above the navbar */
 }
 
 .navbar {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  /* Ensure content is spaced correctly */
+  justify-content: space-between; /* Ensure content is spaced correctly */
   padding: 10px 20px;
 }
 
@@ -52,7 +50,6 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 50%;
   margin: 0 auto;
   z-index: 2;
 }
@@ -60,9 +57,8 @@ body {
 .nav-links {
   display: flex;
   align-items: center;
+  justify-content: center; /* Center align links on desktop */
   flex: 1;
-  justify-content: center;
-  /* Center align links on desktop */
 }
 
 .navbar .logo {
@@ -75,14 +71,12 @@ body {
   text-align: center;
   padding: 14px 20px;
   text-decoration: none;
-  /* margin: 0 10px; */
   width: 200px;
 }
 
 .navbar a:hover {
   color: black;
 }
-
 
 /* Hamburger menu styles */
 .hamburger {
@@ -91,7 +85,6 @@ body {
   cursor: pointer;
   position: absolute;
   right: 40px;
-  /* Adjust to align with your design */
   top: 40px;
 }
 
@@ -104,7 +97,7 @@ body {
 }
 
 .active {
-  background-color: none;
+  background-color: none; /* This is redundant, you can remove it */
 }
 
 .logo2 {
@@ -133,7 +126,7 @@ body {
   .nav-links.active {
     top: 0px;
     padding: 100px;
-    background-color: #4780ba;
+    background-color: #0000006d;
     display: flex;
   }
 
@@ -145,29 +138,30 @@ body {
     margin-top: 150px;
   }
 
-  /* Push down the content when the menu is active */
   .nav-links.active .intro {
-    margin-top: 400px;
-    /* Adjust based on the height of your mobile menu */
+    margin-top: 400px; /* Adjust based on the height of your mobile menu */
   }
 
   .nav-links.active .logo {
-    display: none;
-    /* Adjust based on the height of your mobile menu */
+    display: none; /* Adjust based on the height of your mobile menu */
+  }
+
+  .logo-container {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 
   .logo2 {
     display: block;
     height: 7rem;
-
   }
 
   .navbar a {
     padding: 0px;
   }
-
 }
-
 
 .hero h2 {
   position: relative;
@@ -202,7 +196,6 @@ body {
 .button2:hover {
   color: black;
   border: 1px solid black;
-  z-index: 2;
 }
 
 .description {
@@ -256,14 +249,13 @@ body {
   border-radius: 300px;
 }
 
-/* Slide show */
+/* Slideshow */
 .mySlides {
   display: none;
 }
 
 img {
   vertical-align: middle;
-
 }
 
 /* Slideshow container */
@@ -273,16 +265,12 @@ img {
   margin: auto;
   background-color: black;
   border-radius: 8px;
-  /* Rounded corners for the image */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Subtle shadow for the image */
 }
 
 .slideshow-container img {
   border-radius: 8px;
-  /* Rounded corners for the image */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Subtle shadow for the image */
 }
 
 /* The dots/bullets/indicators */
@@ -316,7 +304,7 @@ img {
   }
 }
 
-/* On smaller screens, decrease text size */
+/* Responsive adjustments for smaller screens */
 @media only screen and (max-width: 300px) {
   .text {
     font-size: 11px;
@@ -349,10 +337,8 @@ img {
   top: 0;
   left: 0;
   height: 50vh;
-  /* Adjust to cover 50% of the viewport height */
   width: 100%;
   z-index: 1;
-  /* Ensure it’s behind the content */
 }
 
 .about-hero h2 {
@@ -361,30 +347,6 @@ img {
   font-size: 3rem;
   font-weight: bold;
   z-index: 2;
-  /* Ensure it’s above the pseudo-element */
-}
-
-.about-image {
-  flex: 1;
-  max-width: 50%;
-  /* Ensure the image takes up no more than 50% of the width */
-  height: auto;
-  /* Maintain aspect ratio */
-  object-fit: cover;
-  /* Ensure the image covers its container */
-  border-radius: 8px;
-  /* Rounded corners for the image */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Subtle shadow for the image */
-  transform: scale(1.05);
-  /* Slight zoom effect on hover */
-  transition: transform 0.3s ease-in-out;
-  /* Smooth zoom effect */
-}
-
-.about-image:hover {
-  transform: scale(1.1);
-  /* Increase zoom on hover */
 }
 
 .about-description {
@@ -394,35 +356,48 @@ img {
   padding: 20px 50px;
 }
 
-.description-text {
-  left: -10%;
-  background-color: #60adfb50;
-  /* Light background color for contrast */
-  border-radius: 8px;
-  /* Rounded corners for a softer look */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Subtle shadow for depth */
-  margin: 20px auto;
-  /* Center the section horizontally */
-  max-width: 90%;
-  /* Restrict width for better readability */
-  /* overflow: hidden; */
-  /* Ensure content doesn’t overflow */
-  color: rgb(102, 102, 102);
+.about-image {
   flex: 1;
+  max-width: 50%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+
+}
+
+.about-image {
+  flex: 1;
+  max-width: 50%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+.about-image:hover {
+  transform: scale(1.1);
+}
+
+.description-text {
+  background-color: #60adfb50;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: rgb(102, 102, 102);
   padding: 10%;
-  /* Space between image and text */
+  max-width: 100%;
 }
 
 .description-text h1 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
   color: black;
 }
 
 .description-text p {
   font-size: 1.125rem;
-  line-height: 1.6;
   color: black;
 }
 
@@ -436,7 +411,14 @@ img {
   margin: 20px;
 }
 
+/* Mobile responsiveness */
 @media only screen and (max-width: 768px) {
+  .about-hero h2 {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+    margin-top: 60%; /* Remove top margin */
+    padding-bottom: 10%; 
+  }
+
   .about-description {
     flex-direction: column;
     align-items: center;
@@ -444,13 +426,13 @@ img {
   }
 
   .about-image {
-    max-width: 100%;
+    max-width: 90%;
     margin-bottom: 20px;
   }
 
   .description-text {
-    margin-left: 0;
-    width: 100%;
+    width: 90%;
+    padding: 5%;
   }
 
   .description-text h1 {
@@ -462,83 +444,37 @@ img {
   }
 }
 
-/* FAQ */
 
-.faq-description {
-  background-color: #60adfb50;
-  text-align: left;
-  /* Align text to the left for better readability */
-  padding: 5% 10%;
-  border-radius: 8px;
-  /* Rounded corners for a modern look */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Subtle shadow for depth */
-  margin: 20px auto;
-  /* Center the container with some margin */
-  max-width: 1200px;
-  /* Limit the maximum width */
+/* FAQs */
+.faq-container {
+  width: 90%;
+  margin: 0 auto;
 }
 
 .faq-item {
-  margin-bottom: 20px;
-  /* Space between FAQ items */
-  color: #333;
-  /* Dark text color for contrast */
+  margin: 15px 0;
 }
 
-.faq-item strong {
+.faq-question {
+  cursor: pointer;
+  padding: 15px;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.faq-answer {
+  display: none;
+  padding: 15px;
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+.faq-question.active + .faq-answer {
   display: block;
-  /* Ensure the question stands out */
-  font-size: 1.2em;
-  /* Slightly larger font for questions */
-  margin-bottom: 10px;
-  /* Space between question and answer */
-  color: black;
-  /* Dark text color for contrast */
 }
 
-.faq-item p {
-  margin: 0;
-  color: #333;
-  /* Dark text color for contrast */
-}
-
-@media (max-width: 768px) {
-  .description {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-image {
-    max-width: 100%;
-    margin-bottom: 20px;
-    /* Space between image and text on small screens */
-  }
-
-  .description-text {
-    margin-left: 0;
-    /* Remove margin on small screens */
-  }
-}
-
-/* Mobile responsiveness for .about-hero h2 */
-@media only screen and (max-width: 768px) {
-  .about-hero h2 {
-    margin-top: 300px;
-    z-index: 2;
-  }
-}
-
-/* CONTACT */
-
-.form-container {
-  display: flex;
-  justify-content: center;
-  /* Center horizontally */
-}
-
-.form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.faq-question.active {
+  background-color: #ddd;
 }
