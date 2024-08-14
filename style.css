@@ -420,8 +420,7 @@ img {
 @media only screen and (max-width: 768px) {
   .about-hero h2 {
     font-size: 2rem;
-    margin-top: 50%;
-    padding-bottom: 10%;
+    top: 50%;
   }
 
   .about-description {
@@ -431,10 +430,8 @@ img {
   }
 
   .about-image {
-    width: auto;
-    /* Ensure the image scales to fit the container */
-    height: 400px;
-    /* Maintain aspect ratio */
+    height: 50vh;
+    width: 100%;
     margin-bottom: 20px;
     /* Space below the image */
     transition: none;
@@ -473,7 +470,7 @@ img {
 .faq-question {
   background: #f4f4f4;
   border: none;
-  border-radius: 300px;
+  border-radius: 10px;
   padding: 1rem;
   text-align: left;
   cursor: pointer;
@@ -485,7 +482,7 @@ img {
   padding: 0 1rem;
   display: none;
   border-top: 1px solid #ddd;
-  border-radius: 50px;
+  border-radius: 10px;
   background: #60adfb50;
   padding: 2%;
 }
