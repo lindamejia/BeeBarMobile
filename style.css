@@ -426,6 +426,7 @@ img {
     max-width: 100%; /* Ensure the image scales to fit the container */
     height: auto; /* Maintain aspect ratio */
     margin-bottom: 20px; /* Space below the image */
+    transition: none;
   }
 
   .description-text {
