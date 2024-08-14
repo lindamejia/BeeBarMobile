@@ -140,10 +140,6 @@ body {
     display: flex;
   }
 
-  .intro {
-    margin-top: 150px;
-  }
-
   .nav-links.active .intro {
     margin-top: 400px;
     /* Adjust based on the height of your mobile menu */
